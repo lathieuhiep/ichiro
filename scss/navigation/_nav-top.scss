@@ -1,24 +1,19 @@
 .main-navigation {
-  background-color: #ffffff;
-  @include box-shadow(0 3px 3px -3px rgba(0, 0, 0, 0.3));
+  background-color: #f1f1f1;
 
   .site-navbar {
     position: relative;
-  }
-  button {
-    &.navbar-toggler {
-      padding: 0;
-      border: 0;
-    }
   }
 }
 .site-logo {
   @include flex(0 0 auto);
 
+  .site-logo__warp {
+    padding: 15px 0;
+  }
   a {
     display: inline-block;
-    line-height: 64px;
-    padding: 15px 0;
+    width: 200px;
   }
 }
 .site-menu {
@@ -30,11 +25,13 @@
 
     li {
       position: relative;
+      padding: 15px 0;
 
       a {
         padding: 0 15px;
         text-shadow: none;
         display: block;
+        font-size: 15px;
 
         &:hover {
           background-color: transparent;
@@ -86,6 +83,10 @@
       }
     }
   }
+}
+.navbar-toggler {
+  padding: 0;
+  border: 0;
 }
 .icon_menu_item_mobile {
   display: none;

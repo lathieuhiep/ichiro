@@ -338,7 +338,7 @@ class ichiro_widget_slides extends Widget_Base {
                 'range' => [
                     'px' => [
                         'min' => 100,
-                        'max' => 1000,
+                        'max' => 2000,
                     ],
                     'vh' => [
                         'min' => 10,

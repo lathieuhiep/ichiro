@@ -122,7 +122,7 @@ $ichiro_opt_args = array(
         ),
     )
 );
-Redux::setArgs( $ichiro_opt_name, $ichiro_opt_args );
+Redux::set_args( $ichiro_opt_name, $ichiro_opt_args );
 /*
  * ---> END ARGUMENTS
  */
@@ -143,11 +143,11 @@ $ichiro_opt_tabs = array(
         'content'   =>  esc_html__( '<p>This is the tab content, HTML is allowed.</p>', 'ichiro' )
     )
 );
-Redux::setHelpTab( $ichiro_opt_name, $ichiro_opt_tabs );
+Redux::set_help_tab( $ichiro_opt_name, $ichiro_opt_tabs );
 
 // Set the help sidebar
 $ichiro_opt_content = esc_html__( '<p>This is the sidebar content, HTML is allowed.</p>', 'ichiro' );
-Redux::setHelpSidebar( $ichiro_opt_name, $ichiro_opt_content );
+Redux::set_help_sidebar( $ichiro_opt_name, $ichiro_opt_content );
 
 
 /*
@@ -162,7 +162,7 @@ Redux::setHelpSidebar( $ichiro_opt_name, $ichiro_opt_content );
 
 // -> START option background
 
-Redux::setSection( $ichiro_opt_name, array(
+Redux::set_section( $ichiro_opt_name, array(
     'id'                =>   'ichiro_theme_option',
     'title'             =>   $ichiro_theme->get( 'Name' ).' '.$ichiro_theme->get( 'Version' ),
     'customizer_width'  =>   '400px',
@@ -173,7 +173,7 @@ Redux::setSection( $ichiro_opt_name, array(
 
 /* Start General Options */
 
-Redux::setSection( $ichiro_opt_name, array(
+Redux::set_section( $ichiro_opt_name, array(
     'title'             =>  esc_html__( 'General Options', 'ichiro' ),
     'id'                =>  'ichiro_general',
     'desc'              =>  esc_html__( 'General all config', 'ichiro' ),
@@ -182,7 +182,7 @@ Redux::setSection( $ichiro_opt_name, array(
 ));
 
 // Favicon Config
-Redux::setSection( $ichiro_opt_name, array(
+Redux::set_section( $ichiro_opt_name, array(
     'title'         =>  esc_html__( 'Favicon', 'ichiro' ),
     'id'            =>  'ichiro_favicon_config',
     'desc'          =>  esc_html__( '', 'ichiro' ),
@@ -201,7 +201,7 @@ Redux::setSection( $ichiro_opt_name, array(
 ));
 
 //Loading config
-Redux::setSection( $ichiro_opt_name, array(
+Redux::set_section( $ichiro_opt_name, array(
     'title'         =>  esc_html__( 'Loading config', 'ichiro' ),
     'id'            =>  'ichiro_general_loading',
     'desc'          =>  esc_html__( '', 'ichiro' ),
@@ -226,7 +226,7 @@ Redux::setSection( $ichiro_opt_name, array(
 ));
 
 //Background Options
-Redux::setSection( $ichiro_opt_name, array(
+Redux::set_section( $ichiro_opt_name, array(
     'title'             =>  esc_html__( 'Background', 'ichiro' ),
     'id'                =>  'ichiro_background',
     'desc'              =>  esc_html__( 'Background all config', 'ichiro' ),
@@ -250,7 +250,7 @@ Redux::setSection( $ichiro_opt_name, array(
 /* End General Options */
 
 /* Start Header Options */
-Redux::setSection( $ichiro_opt_name, array(
+Redux::set_section( $ichiro_opt_name, array(
     'title'             =>  esc_html__( 'Header Options', 'ichiro' ),
     'id'                =>  'ichiro_header',
     'desc'              =>  esc_html__( 'Header all config', 'ichiro' ),
@@ -259,7 +259,7 @@ Redux::setSection( $ichiro_opt_name, array(
 ));
 
 //Logo Config
-Redux::setSection( $ichiro_opt_name, array(
+Redux::set_section( $ichiro_opt_name, array(
     'title'         =>  esc_html__( 'Logo', 'ichiro' ),
     'id'            =>  'ichiro_logo_config',
     'desc'          =>  esc_html__( '', 'ichiro' ),
@@ -276,21 +276,7 @@ Redux::setSection( $ichiro_opt_name, array(
             'default'   =>  false,
         ),
 
-        array(
-            'id'                => 'ichiro_logo_images_size',
-            'type'              => 'dimensions',
-            'units'             => array( 'em', 'px', '%' ),
-            'title'             => esc_html__( 'Set width/height for logo', 'ichiro' ),
-            'subtitle'          => esc_html__( '', 'ichiro' ),
-            'units_extended'    => 'true',
-            'default'           => array(
-                'width'     =>  '',
-                'height'    =>  '',
-            ),
-            'output'         => array('.site-logo img'),
-        ),
-
-        array(
+	    array(
             'id'        =>  'ichiro_nav_top_sticky',
             'type'      =>  'select',
             'title'     =>  esc_html__( 'Sticky Menu', 'ichiro' ),
@@ -305,7 +291,7 @@ Redux::setSection( $ichiro_opt_name, array(
 ));
 
 // information
-Redux::setSection( $ichiro_opt_name, array(
+Redux::set_section( $ichiro_opt_name, array(
     'title'         =>  esc_html__( 'Information', 'ichiro' ),
     'id'            =>  'ichiro_information_config',
     'desc'          =>  esc_html__( '', 'ichiro' ),
@@ -350,7 +336,7 @@ Redux::setSection( $ichiro_opt_name, array(
 /* End Header Options */
 
 /* Start Blog Option */
-Redux::setSection( $ichiro_opt_name, array(
+Redux::set_section( $ichiro_opt_name, array(
     'title'             =>  esc_html__( 'Blog Options', 'ichiro' ),
     'id'                =>  'ichiro_blog_option',
     'customizer_width'  =>  '400px',
@@ -397,7 +383,7 @@ Redux::setSection( $ichiro_opt_name, array(
     )
 ));
 
-Redux::setSection( $ichiro_opt_name, array(
+Redux::set_section( $ichiro_opt_name, array(
 	'title'         =>  esc_html__( 'Single Post', 'ichiro' ),
 	'id'            =>  'ichiro_single_post_option',
 	'desc'          =>  esc_html__( '', 'ichiro' ),
@@ -451,7 +437,7 @@ Redux::setSection( $ichiro_opt_name, array(
 /* End Blog Option */
 
 /* Start Social Network */
-Redux::setSection( $ichiro_opt_name, array(
+Redux::set_section( $ichiro_opt_name, array(
     'title'             =>  esc_html__( 'Social Network', 'ichiro' ),
     'id'                =>  'ichiro_social_network',
     'customizer_width'  =>  '400px',
@@ -491,7 +477,7 @@ Redux::setSection( $ichiro_opt_name, array(
 /* End Social Network */
 
 /* Start Typography Options */
-Redux::setSection( $ichiro_opt_name, array(
+Redux::set_section( $ichiro_opt_name, array(
     'title'             =>  esc_html__( 'Typography', 'ichiro' ),
     'id'                =>  'ichiro_typography',
     'desc'              =>  esc_html__( 'Typography all config', 'ichiro' ),
@@ -500,7 +486,7 @@ Redux::setSection( $ichiro_opt_name, array(
 ));
 
 // Body font
-Redux::setSection( $ichiro_opt_name, array(
+Redux::set_section( $ichiro_opt_name, array(
     'title'         =>  esc_html__( 'Body Typography', 'ichiro' ),
     'id'            =>  'ichiro_body_typography',
     'desc'          =>  esc_html__( '', 'ichiro' ),
@@ -534,7 +520,7 @@ Redux::setSection( $ichiro_opt_name, array(
 ));
 
 // Header font
-Redux::setSection( $ichiro_opt_name, array(
+Redux::set_section( $ichiro_opt_name, array(
     'title'         =>  esc_html__( 'Custom Typography', 'ichiro' ),
     'id'            =>  'ichiro_custom_typography',
     'desc'          =>  esc_html__( '', 'ichiro' ),
@@ -617,7 +603,7 @@ Redux::setSection( $ichiro_opt_name, array(
 /* End Typography Options */
 
 /* Start 404 Options */
-Redux::setSection( $ichiro_opt_name, array(
+Redux::set_section( $ichiro_opt_name, array(
     'title'             =>  esc_html__( '404 Options', 'ichiro' ),
     'id'                =>  'ichiro_404',
     'desc'              =>  esc_html__( '404 page all config', 'ichiro' ),
@@ -659,7 +645,7 @@ Redux::setSection( $ichiro_opt_name, array(
 /* End 404 Options */
 
 /* Start Footer Options */
-Redux::setSection( $ichiro_opt_name, array(
+Redux::set_section( $ichiro_opt_name, array(
     'title'             =>  esc_html__( 'Footer Options', 'ichiro' ),
     'id'                =>  'ichiro_footer',
     'desc'              =>  esc_html__( 'Footer all config', 'ichiro' ),
@@ -668,7 +654,7 @@ Redux::setSection( $ichiro_opt_name, array(
 ));
 
 // Footer Sidebar Multi Column
-Redux::setSection( $ichiro_opt_name, array(
+Redux::set_section( $ichiro_opt_name, array(
     'title'         =>  esc_html__( 'Sidebar Footer Multi Column', 'ichiro' ),
     'id'            =>  'ichiro_footer_sidebar_multi_column',
     'subsection'    =>  true,
@@ -783,7 +769,7 @@ Redux::setSection( $ichiro_opt_name, array(
 ));
 
 //Copyright
-Redux::setSection( $ichiro_opt_name, array(
+Redux::set_section( $ichiro_opt_name, array(
     'title'         =>  esc_html__( 'Copyright', 'ichiro' ),
     'id'            =>  'ichiro_footer_copyright',
     'desc'          =>  esc_html__( '', 'ichiro' ),
@@ -815,18 +801,3 @@ Redux::setSection( $ichiro_opt_name, array(
 
 // Function to test the compiler hook and demo CSS output.
 add_filter('redux/options/' . $ichiro_opt_name . '/compiler', 'compiler_action', 10, 3);
-
-/**
- * This is a test function that will let you see when the compiler hook occurs.
- * It only runs if a field    set with compiler=>true is changed.
- * */
-if ( ! function_exists( 'compiler_action' ) ) {
-    function compiler_action( $options, $css, $changed_values ) {
-        echo '<h1>The compiler hook has run!</h1>';
-        echo "<pre>";
-        print_r( $changed_values ); // Values that have changed since the last save
-        echo "</pre>";
-        print_r($options); //Option values
-        print_r($css); // Compiler selector CSS values  compiler => array( CSS SELECTORS )
-    }
-}

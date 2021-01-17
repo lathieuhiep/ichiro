@@ -62,6 +62,11 @@
 
 @media ( min-width: 992px ) {
 
+  .site-header {
+    .navbar-toggler {
+      display: none;
+    }
+  }
   .main-navigation {
     &.active-sticky-nav {
       position: sticky;
@@ -100,6 +105,9 @@
         max-width: 850px;
       }
     }
+  }
+  .site-logo__warp {
+    text-align: center;
   }
 
 }
