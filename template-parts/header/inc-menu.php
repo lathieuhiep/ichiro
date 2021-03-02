@@ -7,8 +7,9 @@ $ichiro_nav_top_sticky   =   $ichiro_options['ichiro_nav_top_sticky'];
 <nav id="site-navigation" class="main-navigation<?php echo esc_attr( $ichiro_nav_top_sticky == 1 ? ' active-sticky-nav' : '' ); ?>">
     <div class="site-navbar navbar-expand-lg">
         <div class="container">
-            <div class="site-navigation_warp">
-                <div class="site-menu collapse navbar-collapse d-lg-flex justify-content-center">
+            <div class="site-navigation_warp d-flex justify-content-between">
+                <?php get_template_part( 'template-parts/header/inc', 'logo' ); ?>
+                <div class="site-menu collapse navbar-collapse justify-content-end">
 
                     <?php
 

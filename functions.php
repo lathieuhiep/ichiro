@@ -517,7 +517,6 @@ function ichiro_opengraph() {
         <meta property="og:image" content="<?php echo esc_url( $img_src ); ?>"/>
 
 <?php
-
 	else :
 		return;
 	endif;
@@ -527,20 +526,20 @@ add_action( 'wp_head', 'ichiro_opengraph', 5 );
 
 /* Start Facebook SDK */
 function ichiro_facebook_sdk() {
-
 	if ( is_single() ) :
-
 ?>
-
-        <div id="fb-root"></div>
-        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0"></script>
-
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0"></script>
 <?php
-
 	endif;
-
 }
 
 add_action( 'wp_footer', 'ichiro_facebook_sdk' );
 
 /* End share */
+
+function cc_mime_types($mimes) {
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');

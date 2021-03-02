@@ -67,18 +67,14 @@
       display: none;
     }
   }
-  .main-navigation {
-    &.active-sticky-nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+  .active-sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
   }
   .admin-bar {
-    .main-navigation {
-      &.active-sticky-nav {
-        top: 32px;
-      }
+    .active-sticky-nav {
+      top: 32px;
     }
   }
   .site-menu {
