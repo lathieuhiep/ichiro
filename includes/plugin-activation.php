@@ -27,6 +27,13 @@ function ichiro_register_required_plugins() {
 			'required'  =>  true,
 		),
 
+		// This is an example of how to include a plugin from the WordPress Plugin Repository
+		array(
+			'name'      =>  'Meta Box',
+			'slug'      =>  'meta-box',
+			'required'  =>  true,
+		),
+
 	);
 
 	/**

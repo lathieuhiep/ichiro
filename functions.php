@@ -62,6 +62,11 @@ if( !function_exists('ichiro_setup') ):
 endif;
 
 /**
+ * Required: Post type
+ */
+require get_parent_theme_file_path( '/extension/post-type/oil-products.php' );
+
+/**
  * Required: Plugin Activation
  */
 require get_parent_theme_file_path( '/includes/plugin-activation.php' );
