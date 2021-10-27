@@ -21,7 +21,7 @@ class ichiro_widget_post_carousel extends Widget_Base {
     }
 
     public function get_icon() {
-        return 'fa fa-newspaper-o';
+        return 'eicon-posts-carousel';
     }
 
     public function get_script_depends() {
@@ -546,7 +546,7 @@ class ichiro_widget_post_carousel extends Widget_Base {
 
                                     ?>
 
-                                        <img src="<?php echo esc_url( get_theme_file_uri( '/images/no-image.png' ) ) ?>" alt="<?php the_title(); ?>" />
+                                        <img src="<?php echo esc_url( get_theme_file_uri( '/assets/images/no-image.png' ) ) ?>" alt="<?php the_title(); ?>" />
 
                                     <?php endif; ?>
                                 </a>

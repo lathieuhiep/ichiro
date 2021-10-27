@@ -49,12 +49,6 @@ if( !function_exists('ichiro_setup') ):
 
         /*  Post Type   */
         add_theme_support( 'post-formats', array( 'gallery', 'video', 'audio' ) );
-
-        /*
-	    * This theme styles the visual editor to resemble the theme style,
-	    * specifically font, colors, icons, and column width.
-	    */
-        add_editor_style( array( 'css/editor-style.css', ichiro_fonts_url()) );
     }
 
     add_action( 'after_setup_theme', 'ichiro_setup' );
@@ -503,7 +497,7 @@ function ichiro_opengraph() {
 		if( has_post_thumbnail( $post->ID ) ) :
 			$img_src = get_the_post_thumbnail_url( get_the_ID(),'full' );
 		else :
-			$img_src = get_theme_file_uri( '/images/no-image.png' );
+			$img_src = get_theme_file_uri( '/assets/images/no-image.png' );
 		endif;
 
 		if( $excerpt = $post->post_excerpt ) :

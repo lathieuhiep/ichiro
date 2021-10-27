@@ -2,238 +2,253 @@
 
 namespace Elementor;
 
-if ( ! defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 class ichiro_widget_about_text extends Widget_Base {
 
-    public function get_categories() {
-        return array( 'ichiro_widgets' );
-    }
+	public function get_categories() {
+		return array( 'ichiro_widgets' );
+	}
 
-    public function get_name() {
-        return 'ichiro-about-text';
-    }
+	public function get_name() {
+		return 'ichiro-about-text';
+	}
 
-    public function get_title() {
-        return esc_html__( 'About Text', 'ichiro' );
-    }
+	public function get_title() {
+		return esc_html__( 'About Text', 'ichiro' );
+	}
 
-    public function get_icon() {
-        return 'eicon-text-area';
-    }
+	public function get_icon() {
+		return 'eicon-text-field';
+	}
 
-    protected function _register_controls() {
+	protected function _register_controls() {
 
-        $this->start_controls_section(
-            'section_content',
-            [
-                'label' => esc_html__( 'Text', 'ichiro' ),
-            ]
-        );
+		$this->start_controls_section(
+			'section_heading',
+			[
+				'label' => esc_html__( 'Heading', 'ichiro' ),
+			]
+		);
 
-        $this->add_control(
-            'widget_title',
-            [
-                'label'         =>  esc_html__( 'Title', 'ichiro' ),
-                'type'          =>  Controls_Manager::TEXT,
-                'default'       =>  esc_html__( 'Title About Text', 'ichiro' ),
-                'label_block'   =>  true
-            ]
-        );
+		$this->add_control(
+			'title',
+			[
+				'label'       => esc_html__( 'Title', 'ichiro' ),
+				'type'        => Controls_Manager::TEXT,
+				'default'     => esc_html__( 'Title', 'ichiro' ),
+				'label_block' => true
+			]
+		);
 
-        $this->add_control(
-            'icon',
-            [
-                'label'     =>  esc_html__( 'Icon', 'ichiro' ),
-                'type'      =>  Controls_Manager::ICON,
-                'default'   =>  [
-                    'value'     =>  'fas fa-star',
-                    'library'   =>  'solid',
-                ],
-            ]
-        );
+		$this->add_control(
+			'sub_title',
+			[
+				'label'       => esc_html__( 'Sub Title', 'ichiro' ),
+				'type'        => Controls_Manager::TEXT,
+				'default'     => esc_html__( 'Sub Title', 'ichiro' ),
+				'label_block' => true
+			]
+		);
 
-        $this->end_controls_section();
+		$this->add_control(
+			'description',
+			[
+				'label'   => esc_html__( 'Description', 'ichiro' ),
+				'type'    => Controls_Manager::WYSIWYG,
+				'default' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed imperdiet orci',
+			]
+		);
 
-        $this->start_controls_section(
-            'section_text_editor',
-            [
-                'label' => esc_html__( 'Text Editor', 'ichiro' ),
-            ]
-        );
+		$this->end_controls_section();
 
-        $this->add_control(
-            'widget_description',
-            [
-                'label'     =>  esc_html__( 'Description', 'ichiro' ),
-                'type'      =>  Controls_Manager::WYSIWYG,
-                'default'   =>  esc_html__( 'Default description', 'ichiro' ),
-            ]
-        );
+		$this->start_controls_section(
+			'section_button',
+			[
+				'label' => esc_html__( 'Button', 'ichiro' ),
+			]
+		);
 
-        $this->end_controls_section();
+		$this->add_control(
+			'text_btn',
+			[
+				'label'       => esc_html__( 'Text Button', 'ichiro' ),
+				'type'        => Controls_Manager::TEXT,
+				'default'     => esc_html__( 'Learn More', 'ichiro' ),
+				'label_block' => true
+			]
+		);
 
-        /*STYLE TAB*/
-        $this->start_controls_section('style', array(
-            'label' =>  esc_html__( 'Text', 'ichiro' ),
-            'tab'   =>  Controls_Manager::TAB_STYLE,
-        ));
+		$this->add_control(
+			'link_btn',
+			[
+				'label'         => esc_html__( 'Link', 'ichiro' ),
+				'type'          => Controls_Manager::URL,
+				'placeholder'   => esc_html__( 'https://your-link.com', 'ichiro' ),
+				'show_external' => false,
+				'default'       => [
+					'url'         => '',
+					'is_external' => false,
+					'nofollow'    => false,
+				],
+			]
+		);
 
-        $this->add_control(
-            'align',
-            [
-                'label'     =>  esc_html__( 'Alignment Title', 'ichiro' ),
-                'type'      =>  Controls_Manager::CHOOSE,
-                'options'   =>  [
-                    'left'  =>  [
-                        'title' =>  esc_html__( 'Left', 'ichiro' ),
-                        'icon'  =>  'fa fa-align-left',
-                    ],
+		$this->end_controls_section();
 
-                    'center'    =>  [
-                        'title' =>  esc_html__( 'Center', 'ichiro' ),
-                        'icon'  =>  'fa fa-align-center',
-                    ],
-                    'right' => [
-                        'title' =>  esc_html__( 'Right', 'ichiro' ),
-                        'icon'  =>  'fa fa-align-right',
-                    ],
-                ],
-                'selectors' => [
-                    '{{WRAPPER}} .element-about-text' => 'text-align: {{VALUE}};',
-                ],
-            ]
-        );
+		/*STYLE TAB*/
+		$this->start_controls_section( 'style', array(
+			'label' => esc_html__( 'Text', 'ichiro' ),
+			'tab'   => Controls_Manager::TAB_STYLE,
+		) );
 
-        $this->add_control(
-            'title_color',
-            [
-                'label'     =>  __( 'Title Color', 'ichiro' ),
-                'type'      =>  Controls_Manager::COLOR,
-                'selectors' =>  [
-                    '{{WRAPPER}} .element-about-text__title' => 'color: {{VALUE}}',
-                ],
-            ]
-        );
+		$this->add_control(
+			'title_color',
+			[
+				'label'     => __( 'Title Color', 'ichiro' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .element-about-text__title' => 'color: {{VALUE}}',
+				],
+			]
+		);
 
-        $this->add_control(
-            'text_editor_color',
-            [
-                'label'     =>  __( 'Text Editor Color', 'ichiro' ),
-                'type'      =>  Controls_Manager::COLOR,
-                'selectors' =>  [
-                    '{{WRAPPER}} .element-about-text__description' => 'color: {{VALUE}}',
-                ],
-            ]
-        );
+		$this->add_control(
+			'text_editor_color',
+			[
+				'label'     => __( 'Text Editor Color', 'ichiro' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .element-about-text__description' => 'color: {{VALUE}}',
+				],
+			]
+		);
 
-        $this->add_control(
-            'hide_line',
-            [
-                'label'     =>  esc_html__( 'Hide Line', 'ichiro' ),
-                'type'      =>  Controls_Manager::SELECT,
-                'default'   =>  'no',
-                'options'   =>  [
-                    'no'    =>  esc_html__( 'No', 'ichiro' ),
-                    'yes'   =>  esc_html__( 'Yes', 'ichiro' ),
-                ],
-            ]
-        );
+		$this->add_control(
+			'hide_line',
+			[
+				'label'   => esc_html__( 'Hide Line', 'ichiro' ),
+				'type'    => Controls_Manager::SELECT,
+				'default' => 'no',
+				'options' => [
+					'no'  => esc_html__( 'No', 'ichiro' ),
+					'yes' => esc_html__( 'Yes', 'ichiro' ),
+				],
+			]
+		);
 
-        $this->add_responsive_control(
-            'margin_bottom_line',
-            [
-                'label'     =>  esc_html__( 'Margin Bottom Line', 'ichiro' ),
-                'type'      =>  Controls_Manager::SLIDER,
-                'default'   =>  [
-                    'size'  =>  '',
-                ],
-                'range'     =>  [
-                    'px'    =>  [
-                        'min'   =>  10,
-                        'max'   =>  600,
-                    ],
-                ],
-                'selectors' =>  [
-                    '{{WRAPPER}} .element-about-text__line' => 'margin-bottom: {{SIZE}}{{UNIT}};',
-                ],
-                'condition'     =>  [
-                    'hide_line' =>  'no',
-                ],
-            ]
-        );
+		$this->add_responsive_control(
+			'margin_bottom_line',
+			[
+				'label'     => esc_html__( 'Margin Bottom Line', 'ichiro' ),
+				'type'      => Controls_Manager::SLIDER,
+				'default'   => [
+					'size' => '',
+				],
+				'range'     => [
+					'px' => [
+						'min' => 10,
+						'max' => 600,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .element-about-text__line' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+				],
+				'condition' => [
+					'hide_line' => 'no',
+				],
+			]
+		);
 
-        $this->end_controls_section();
+		$this->end_controls_section();
 
-    }
+	}
 
-    protected function render() {
+	protected function render() {
+		$settings = $this->get_settings_for_display();
+		$target = $settings['link_btn']['is_external'] ? ' target="_blank"' : '';
+		$nofollow = $settings['link_btn']['nofollow'] ? ' rel="nofollow"' : '';
 
-        $settings       =   $this->get_settings_for_display();
-
-        ?>
+		?>
 
         <div class="element-about-text">
-            <h2 class="element-about-text__title">
-                <?php echo wp_kses_post( $settings['widget_title'] ); ?>
-            </h2>
+            <div class="element-about-text__heading">
+                <h2 class="title">
+					<?php echo esc_html( $settings['title'] ); ?>
+                </h2>
 
-            <div class="icon">
-                <?php Icons_Manager::render_icon( $settings['icon'], [ 'aria-hidden' => 'true' ] ); ?>
+				<?php if ( $settings['sub_title'] ) : ?>
+
+                    <span class="sub-title">
+                        <?php echo esc_html( $settings['sub_title'] ); ?>
+                    </span>
+
+				<?php endif; ?>
             </div>
 
-            <?php if ( $settings['hide_line'] == 'no' ) : ?>
-
-                <span class="element-about-text__line">&nbsp;</span>
-
-            <?php endif; ?>
-
-            <?php if ( !empty( $settings['widget_description'] ) ) : ?>
+			<?php if ( ! empty( $settings['description'] ) ) : ?>
 
                 <div class="element-about-text__description">
-                    <?php echo wp_kses_post( $settings['widget_description'] ); ?>
+					<?php echo esc_html( $settings['description'] ); ?>
                 </div>
 
-            <?php endif; ?>
+			<?php endif; ?>
+
+            <div class="element-about-text__btn">
+                <span class="element-about-text__line">&nbsp;</span>
+
+                <a class="link" href="<?php echo esc_url( $settings['link_btn']['url'] ) ?>"<?php echo $target . $nofollow ?>>
+	                <?php echo esc_html( $settings['text_btn'] ); ?>
+                </a>
+            </div>
         </div>
 
-        <?php
+		<?php
 
-    }
+	}
 
-    protected function _content_template() {
+	protected function _content_template() {
 
-        ?>
+		?>
         <#
-        var iconHTML = elementor.helpers.renderIcon( view, settings.selected_icon, { 'aria-hidden': true }, 'i' , 'object' );
+        var target = settings.link_btn.is_external ? ' target="_blank"' : '';
+        var nofollow = settings.link_btn.nofollow ? ' rel="nofollow"' : '';
         #>
 
         <div class="element-about-text">
-            <h2 class="element-about-text__title">
-                {{{ settings.widget_title }}}
-            </h2>
+            <div class="element-about-text__heading">
+                <h2 class="title">
+                    {{{ settings.title }}}
+                </h2>
 
-            <div class="icon">
-                {{{ iconHTML.value }}}
+                <# if ( settings.sub_title ) {#>
+                <span class="sub-title">
+                    {{{ settings.sub_title }}}
+                </span>
+                <# } #>
             </div>
 
-            <# if ( settings.hide_line == 0 ) {#>
-
-            <span class="element-about-text__line">&nbsp;</span>
-
-            <# } #>
-
-            <# if ( '' !== settings.widget_description ) {#>
+            <# if ( '' !== settings.description ) {#>
 
             <div class="element-about-text__description">
-                {{{ settings.widget_description }}}
+                {{{ settings.description }}}
             </div>
 
             <# } #>
+
+            <div class="element-about-text__btn">
+                <span class="element-about-text__line">&nbsp;</span>
+
+                <a class="link" href="{{ settings.link_btn.url }}"{{ target }}{{ nofollow }}>
+                    {{{ settings.text_btn }}}
+                </a>
+            </div>
         </div>
 
-        <?php
-    }
+		<?php
+	}
 
 }
 

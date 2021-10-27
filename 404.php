@@ -18,7 +18,7 @@ $ichiro_background = $ichiro_options['ichiro_404_background']['id'];
                     if( !empty( $ichiro_background ) ):
                         echo wp_get_attachment_image( $ichiro_background, 'full' );
                     else:
-                        echo'<img src="'.esc_url( get_theme_file_uri( '/images/404.jpg' ) ).'" alt="'.get_bloginfo('title').'" />';
+                        echo'<img src="'.esc_url( get_theme_file_uri( '/assets/images/404.jpg' ) ).'" alt="'.get_bloginfo('title').'" />';
                     endif;
                     ?>
                 </figure>

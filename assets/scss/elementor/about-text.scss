@@ -1,0 +1,31 @@
+.element-about-text {
+  text-align: center;
+
+  &__heading {
+    position: relative;
+
+    .title {
+      margin-bottom: 0;
+      color: #d6d6d6;
+      font-size: 90px;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    .sub-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: inline-block;
+      font-size: 28px;
+      font-weight: 700;
+      color: $color-second;
+      @include transform( translate(-50%, -50%) );
+    }
+  }
+
+  &__description {
+    max-width: 856px;
+    margin: 0 auto;
+  }
+}

@@ -1,37 +1,5 @@
 <?php
 
-/* GET fonts google */
-if ( ! function_exists( 'ichiro_fonts_url' ) ) :
-
-	function ichiro_fonts_url() {
-		$ichiro_fonts_url = '';
-
-		/* Translators: If there are characters in your language that are not
-		* supported by Open Sans, translate this to 'off'. Do not translate
-		* into your own language.
-		*/
-		$ichiro_font_google = _x( 'on', 'Google font: on or off', 'ichiro' );
-
-		if ( 'off' !== $ichiro_font_google ) {
-			$ichiro_font_families = array();
-
-			if ( 'off' !== $ichiro_font_google ) {
-				$ichiro_font_families[] = 'Roboto:400,700';
-			}
-
-			$ichiro_query_args = array(
-				'family' => urlencode( implode( '|', $ichiro_font_families ) ),
-				'subset' => urlencode( 'latin,vietnamese' ),
-			);
-
-			$ichiro_fonts_url = add_query_arg( $ichiro_query_args, 'https://fonts.googleapis.com/css' );
-		}
-
-		return esc_url_raw( $ichiro_fonts_url );
-	}
-
-endif;
-
 // Remove jquery migrate
 add_action( 'wp_default_scripts', 'ichiro_remove_jquery_migrate' );
 function ichiro_remove_jquery_migrate( $scripts ) {
@@ -61,10 +29,10 @@ function ichiro_register_front_end() {
 	/*
 	* Start Get Css Front End
 	* */
-	wp_enqueue_style( 'ichiro-fonts', ichiro_fonts_url(), array(), null );
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap', array(), null );
 
 	/* Start main Css */
-	wp_enqueue_style( 'ichiro-library', get_theme_file_uri( '/css/library/minify/library.min.css' ), array(), '' );
+	wp_enqueue_style( 'ichiro-library', get_theme_file_uri( '/assets/css/library.min.css' ), array(), '' );
 	/* End main Css */
 
     /* Start main Css */
@@ -87,7 +55,7 @@ function ichiro_register_front_end() {
 	wp_enqueue_script( 'html5', get_theme_file_uri( '/js/html5.js' ), array(), '3.7.3' );
 	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
 
-	wp_enqueue_script( 'ichiro-main', get_theme_file_uri( '/js/library/minify/library.min.js' ), array('jquery'), '', true );
+	wp_enqueue_script( 'ichiro-library', get_theme_file_uri( '/assets/js/library.min.js' ), array('jquery'), '', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

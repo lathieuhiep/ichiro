@@ -80,6 +80,38 @@ class ichiro_widget_slides extends Widget_Base {
             ]
         );
 
+	    $repeater->add_responsive_control(
+		    'background_position',
+		    [
+			    'label' => esc_html__( 'Position', 'elementor' ),
+			    'type' => Controls_Manager::SELECT,
+			    'options' => [
+				    'center center' => esc_html__( 'Center Center', 'elementor' ),
+				    'center left' => esc_html__( 'Center Left', 'elementor' ),
+				    'center right' => esc_html__( 'Center Right', 'elementor' ),
+				    'top center' => esc_html__( 'Top Center', 'elementor' ),
+				    'top left' => esc_html__( 'Top Left', 'elementor' ),
+				    'top right' => esc_html__( 'Top Right', 'elementor' ),
+				    'bottom center' => esc_html__( 'Bottom Center', 'elementor' ),
+				    'bottom left' => esc_html__( 'Bottom Left', 'elementor' ),
+				    'bottom right' => esc_html__( 'Bottom Right', 'elementor' ),
+			    ],
+			    'default' => 'center center',
+			    'selectors' => [
+				    '{{WRAPPER}} {{CURRENT_ITEM}} .element-slides__item--bg' => 'background-position: {{VALUE}}',
+			    ],
+			    'conditions' => [
+				    'terms' => [
+					    [
+						    'name' => 'slides_image[url]',
+						    'operator' => '!=',
+						    'value' => '',
+					    ],
+				    ],
+			    ],
+		    ]
+	    );
+
         $repeater->add_control(
             'background_overlay',
             [

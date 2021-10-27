@@ -17,7 +17,7 @@ if(  $ichiro_show_loading == 1 ) :
 
         <?php else: ?>
 
-            <img class="loading_img" src="<?php echo esc_url(get_theme_file_uri( '/images/loading.gif' )); ?>" alt="<?php esc_attr_e('loading...','ichiro') ?>">
+            <img class="loading_img" src="<?php echo esc_url(get_theme_file_uri( '/assets/images/loading.gif' )); ?>" alt="<?php esc_attr_e('loading...','ichiro') ?>">
 
         <?php endif; ?>
 
