@@ -26,6 +26,31 @@
 
   &__description {
     max-width: 856px;
-    margin: 0 auto;
+    margin: 0 auto 50px;
+  }
+
+  &__btn {
+    a {
+      &:hover {
+        background-color: $background-hover;
+      }
+    }
+
+    .link {
+      position: relative;
+      margin-top: 30px;
+      background-color: $background-second;
+
+      &:before {
+        position: absolute;
+        content: "";
+        top: -30px;
+        left: 50%;
+        width: 56px;
+        height: 5px;
+        background-color: $background-third;
+        @include transform(translateX(-50%));
+      }
+    }
   }
 }

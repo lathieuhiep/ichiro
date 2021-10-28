@@ -1,0 +1,46 @@
+.element-box-image {
+  position: relative;
+
+  .image-box {
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .warp {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 30px;
+    @include flexbox();
+    @include justify-content(space-between);
+    @include flex-direction(column);
+  }
+
+  .heading {
+    @include flexbox();
+    @include align-items(center);
+
+    .avatar {
+      width: 100px;
+      @include flex(0 0 auto);
+    }
+
+    .title {
+      font-size: 25px;
+      color: #ffffff;
+      margin-bottom: 0;
+      @include flex(1);
+    }
+  }
+
+  .subtitle {
+    color: #ffffff;
+  }
+}

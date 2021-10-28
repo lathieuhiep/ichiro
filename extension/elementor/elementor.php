@@ -49,10 +49,12 @@ final class ichiro_plugin_elementor_widgets {
     public function init_widgets() {
 
         $build_widgets_filename = [
+	        'about-text',
             'slides',
             'post-grid',
             'post-carousel',
-            'about-text',
+	        'image-content',
+	        'box-image'
         ];
         
         foreach ( $build_widgets_filename as $widget_filename ) :
