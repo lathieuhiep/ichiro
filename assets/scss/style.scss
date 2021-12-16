@@ -33,6 +33,8 @@ Text Domain: ichiro
   ## Posts Carousel
   ## Image Content
   ## Box Image
+# Oil Post Type
+  ## Oil Category
 # Contact Form 7
 # Footer
 # Responsive
@@ -79,6 +81,15 @@ Text Domain: ichiro
 # Elementor
 -----------------------------------------------------------------------------*/
 @import "elementor/elementor";
+
+/**
+
+
+# Oil Post Type
+-----------------------------------------------------------------------------*/
+
+/* Oil Category */
+@import "oil-product/oil-cate";
 
 /**
 # Contact Form 7

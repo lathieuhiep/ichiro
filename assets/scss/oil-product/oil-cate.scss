@@ -1,0 +1,74 @@
+.site-oli-category {
+  padding-top: 0;
+
+  .advanced-header {
+    position: relative;
+    margin-bottom: 80px;
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .image-cate {
+      height: 350px;
+      overflow: hidden;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__content {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      text-align: center;
+      @include transform(translateY(-50%));
+
+      .title-cat {
+        color: #ffffff;
+        text-transform: capitalize;
+      }
+
+      .breadcrumbs {
+        color: #ffffff;
+
+        a {
+          color: #ffffff;
+
+          &:hover {
+            color: $color-hover;
+          }
+        }
+      }
+    }
+  }
+}
+
+.site-oli-products {
+  a {
+    display: inline-block;
+  }
+
+  .item {
+    &__content {
+      .model-number {
+        font-size: 17px;
+        margin-bottom: 0;
+      }
+
+      .modal-name {
+        font-size: 15px;
+      }
+    }
+  }
+}

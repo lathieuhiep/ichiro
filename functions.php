@@ -81,7 +81,7 @@ if ( class_exists( 'RW_Meta_Box' ) ) {
     /*
      * Required: Meta Box Framework
      */
-    require get_parent_theme_file_path( '/extension/meta-box/meta-box-options.php' );
+    require get_parent_theme_file_path( '/extension/meta-box/oil-options.php' );
 
 }
 
