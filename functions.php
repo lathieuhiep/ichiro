@@ -542,3 +542,27 @@ function cc_mime_types($mimes) {
 	return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
+
+/* Get Contact Form */
+function ichiro_get_form_cf7() {
+
+	$ichiro_contact_forms    =   array();
+	$ichiro_cf7              =   get_posts('post_type="wpcf7_contact_form"&numberposts=-1');
+
+	if ( $ichiro_cf7 ) :
+
+		foreach ( $ichiro_cf7 as $item ) :
+
+			$ichiro_contact_forms[$item->ID] = $item->post_title;
+
+		endforeach;
+
+	else :
+
+		$ichiro_contact_forms[esc_html__( "No contact forms found", "tz-gustoso-restaurant" )] = 0;
+
+	endif;
+
+	return $ichiro_contact_forms;
+
+}

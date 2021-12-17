@@ -1,53 +1,53 @@
 .site-oli-category {
   padding-top: 0;
+}
 
-  .advanced-header {
-    position: relative;
-    margin-bottom: 80px;
+.advanced-header {
+  position: relative;
+  margin-bottom: 80px;
 
-    &:before {
-      position: absolute;
-      content: '';
-      top: 0;
-      left: 0;
-      width: 100%;
+  &:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+  }
+
+  .image-cate {
+    height: 350px;
+    overflow: hidden;
+
+    img {
       height: 100%;
-      background-color: rgba(0,0,0,0.5);
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    @include transform(translateY(-50%));
+
+    .title {
+      color: #ffffff;
+      text-transform: capitalize;
     }
 
-    .image-cate {
-      height: 350px;
-      overflow: hidden;
+    .breadcrumbs {
+      color: #ffffff;
 
-      img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-      }
-    }
-
-    &__content {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      text-align: center;
-      @include transform(translateY(-50%));
-
-      .title-cat {
-        color: #ffffff;
-        text-transform: capitalize;
-      }
-
-      .breadcrumbs {
+      a {
         color: #ffffff;
 
-        a {
-          color: #ffffff;
-
-          &:hover {
-            color: $color-hover;
-          }
+        &:hover {
+          color: $color-hover;
         }
       }
     }
@@ -69,6 +69,57 @@
       .modal-name {
         font-size: 15px;
       }
+    }
+  }
+}
+
+.site-single-oil {
+  padding-bottom: 50px;
+
+  .post-title {
+    margin-bottom: 30px;
+  }
+
+  .entry-content {
+    margin-bottom: 50px;
+  }
+
+  .post-content {
+    margin-bottom: 30px;
+
+    &__item {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px dotted #bababa;
+      @include flexbox();
+
+      span {
+        font-size: 17px;
+        font-weight: 700;
+        text-transform: uppercase;
+        @include flex(1);
+
+        &:first-child {
+          @include flex(0 0 30%);
+        }
+      }
+    }
+  }
+
+  .heading-desc,
+  .title-related {
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+
+    &:after {
+      position: absolute;
+      content: "";
+      left: 0;
+      bottom: 0;
+      width: 72px;
+      height: 5px;
+      background-color: #b4061f;
     }
   }
 }

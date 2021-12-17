@@ -11,7 +11,7 @@ $get_name_oil_cat = get_query_var( 'oil_cat' );
             </figure>
 
             <div class="advanced-header__content">
-                <h1 class="title-cat">
+                <h1 class="title">
                     <?php echo esc_html( $get_name_oil_cat ); ?>
                 </h1>
 

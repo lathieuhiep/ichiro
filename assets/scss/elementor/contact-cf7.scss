@@ -1,0 +1,32 @@
+.element-contact-cf7 {
+  form {
+    &.wpcf7-form {
+      p {
+        position: relative;
+      }
+
+      span {
+        &.wpcf7-form-control-wrap {
+          input,
+          textarea {
+            padding: 10px;
+          }
+        }
+      }
+
+      .wpcf7-submit {
+        display: block;
+        width: 100%;
+        padding: 10px;
+      }
+
+      .wpcf7-spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: 0;
+        @include transform(translate(-50%, -50%));
+      }
+    }
+  }
+}

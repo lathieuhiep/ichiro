@@ -54,7 +54,8 @@ final class ichiro_plugin_elementor_widgets {
             'post-grid',
             'post-carousel',
 	        'image-content',
-	        'box-image'
+	        'box-image',
+	        'contact-cf7'
         ];
         
         foreach ( $build_widgets_filename as $widget_filename ) :

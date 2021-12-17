@@ -524,7 +524,7 @@ class ichiro_widget_post_carousel extends Widget_Base {
 
         endif;
 
-        $query = new \ WP_Query( $args );
+        $query = new \WP_Query( $args );
 
         if ( $query->have_posts() ) :
 
