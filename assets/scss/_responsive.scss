@@ -199,6 +199,21 @@
     display: block;
   }
 
+  .element-about-text__heading {
+    .title {
+      font-size: 45px;
+    }
+
+    .sub-title {
+      position: static;
+      display: block;
+      margin-bottom: 16px;
+      font-size: 17px;
+      line-height: 1.4em;
+      @include transform(translate(0));
+    }
+  }
+
 }
 
 @media ( min-width: 768px ) and ( max-width: 991px ) {
@@ -240,16 +255,9 @@
   .site-sidebar {
     padding-top: 50px;
   }
-  /* woocommerce */
-  .woocommerce,
-  .woocommerce-page {
-    .col2-set {
-      .col-1,
-      .col-2 {
-        @include flex(0 0 100%);
-        max-width: 100%;
-      }
-    }
+
+  .advanced-header__content .title {
+    font-size: 20px;
   }
 
 }
